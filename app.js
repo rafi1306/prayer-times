@@ -2,7 +2,25 @@ function prayerTimes(latitude, longitude){
     fetch('http://api.aladhan.com/v1/calendar?latitude='+latitude+'&longitude='+longitude+'&method=2')
     .then(response => response.json())
     .then(function(response){
-        console.log(response.data[15].timings)
+        let date = new Date();
+        let today = date.getDate() - 1;
+        let data = response.data[today].timings;
+
+        let app = document.getElementById('app');
+        let table = document.createElement('table');
+        let tableBody = document.createElement('tbody');
+
+        for(i in data){
+            let row = tableBody.insertRow();
+            let name = row.insertCell(0);
+            let time = row.insertCell(1);
+            name.innerHTML = i;
+            time.innerHTML = data[i];
+            tableBody.appendChild(row);
+        }
+
+        table.appendChild(tableBody);
+        app.appendChild(table);
     });
 }
 
