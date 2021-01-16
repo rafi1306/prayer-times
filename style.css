@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#app {
+    width: 300px;
+    margin: 0px auto;
+}
+
+#app h3 {
+    font-size: 1.1em;
+    margin-bottom: 0px;
+    padding: 0.3em;
+    background-color: rgb(0, 132, 255);
+    color: white;
+    text-align: center;
+}
+
+#app table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#app table td {
+    font-size: 0.9em;
+    padding: 0.4em;
+}
+
+#app table td:last-child {
+    text-align: right;
+}
+
+#app table tr:nth-child(even) {
+    background-color: #e8e8e8;
+}
+
+#app table tr:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
